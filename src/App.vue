@@ -12,7 +12,9 @@ export default {
 
 <template>
   <AppHeader />
-  <RouterView />
+  <main>
+    <RouterView />
+  </main>
   <AppFooter />
 </template>
 
