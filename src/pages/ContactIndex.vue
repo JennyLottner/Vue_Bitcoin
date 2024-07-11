@@ -42,8 +42,8 @@ export default {
 </script>
 
 <template>
-  <section class="contacts">
-    <h1>contacts</h1>
+  <section class="contacts flex column">
+    <h1>Contacts</h1>
     <ContactList @onRemove="onRemove" :contacts = "contacts" />
   </section>
 </template>
@@ -57,6 +57,7 @@ export default {
 
   h1 {
     margin-block-end: 20px;
+    align-self: center;
   }
 }
 </style>

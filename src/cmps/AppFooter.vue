@@ -1,6 +1,6 @@
 <template>
   <footer class="app-footer flex center">
-    <p>Vue site by<button><RouterLink to="/about">©Jenny Tover</RouterLink></button></p>
+    <p>Vue site by <button><RouterLink to="/about">©Jenny Tover</RouterLink></button></p>
   </footer>
 </template>
 
@@ -19,10 +19,7 @@
 
     button {
       color: $blue-text;
-
-      padding: 2px 10px;
-      border-radius: 20px;
-      border: none;
+      padding: 2px 5px;
 
       &:hover {
         background-color: $header-footer-bgc-hover;

@@ -19,10 +19,8 @@ export default {
     <li v-for="contact in contacts" :key="contact._id">
       <ContactPreview :contact="contact"/>
       <section class="actions flex justify-evenly">
-        <button class="remove-btn" @click="onRemove(contact._id)">
-          Remove
-        </button>
-        <RouterLink :to="`contact/${contact._id}`"
+        <button class="remove-btn" @click="onRemove(contact._id)">Remove</button>
+        <RouterLink :to="`/contact/${contact._id}`"
           ><button class="details-btn">Details</button></RouterLink
         >
       </section>
@@ -44,9 +42,12 @@ export default {
     border-radius: 10px;
     padding: 15px 20px;
 
-    .contact-info {
-      gap: 5px;
-      margin-block-end: 10px;
+    button {
+      background-color: $header-footer-bgc;
+
+      &:hover {
+        background-color: $header-footer-bgc-hover;
+      }
     }
   }
 }

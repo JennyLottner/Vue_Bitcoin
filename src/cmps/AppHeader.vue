@@ -26,8 +26,6 @@ export default {};
 
     button {
       padding: 4px 10px;
-      border-radius: 20px;
-      border: none;
 
       &:hover {
         background-color: $header-footer-bgc-hover;

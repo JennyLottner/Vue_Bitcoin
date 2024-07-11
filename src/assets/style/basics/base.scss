@@ -24,9 +24,10 @@
   }
 
   button {
-    background-color: transparent;
-    border: 0.667px solid gray;
+    border: none;
     border-radius: 5px;
+    padding: 3px 8px;
+    background-color: transparent;
 
     cursor: pointer;
   }

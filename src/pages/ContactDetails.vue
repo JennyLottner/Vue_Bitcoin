@@ -1,30 +1,35 @@
 <script>
-import { contactService } from '@/services/contactService';
+import { contactService } from "@/services/contactService";
 
 export default {
-data() { return {
-    contactId: this.$route.params.id,
-    contact: null
-}},
-async created() {
+  data() {
+    return {
+      contactId: this.$route.params.id,
+      contact: null,
+    };
+  },
+  async created() {
     try {
-        this.contact = await contactService.getContactById(this.contactId)
+      this.contact = await contactService.getContactById(this.contactId);
+    } catch (err) {
+      console.log(err);
     }
-    catch(err) {console.log(err)}
-},
-}
+  },
+};
 </script>
 
 <template>
-    <p v-if="!contact">loading</p>
-    <section v-else class="details-page flex column">
-        <h1>Contact Details</h1>
-        <div class="contact flex column">
-            <h2>{{ contact.name }}</h2>
-            <p><span>Phone:</span> {{ contact.phone }}</p>
-            <p><span>Email:</span> {{ contact.email }}</p>
-        </div>
-    </section>
+  <p v-if="!contact">loading</p>
+  <section v-else class="details-page flex column align-center">
+      <RouterLink to="/contact"><button class="back-btn">Back</button></RouterLink>
+      <h1>Contact Details</h1>
+    <div class="contact flex column">
+      <h2>{{ contact.name }}</h2>
+      <img :src="`https://robohash.org/${contact.name}.png?size=150x150`" alt="Robot Image"/>
+      <p><span>Phone:</span> {{ contact.phone }}</p>
+      <p><span>Email:</span> {{ contact.email }}</p>
+    </div>
+  </section>
 </template>
 
 <style lang="scss">
@@ -32,22 +37,38 @@ async created() {
 @import "../assets/style/basics/helpers";
 
 .details-page {
-    padding: 10px;
+  padding: 10px;
+  position: relative;
 
-    .contact {
-        align-self: center;
-        gap: 10px;
-        padding: 20px 30px 30px;
-        border-radius: 20px;
-        background-color: $contacts-bgc;
-
-        h2 {
-            align-self: center;
-        }
-
-        span {
-            font-weight: bold;
-        }
+  .back-btn {
+    position: absolute;
+    inset: 20px auto auto 20px;
+    background-color: $contacts-bgc;
+        
+    &:hover {
+        background-color: $header-footer-bgc;
     }
+}
+
+  .contact {
+    gap: 10px;
+    padding: 10px 30px 20px;
+    margin-block-start: 20px;
+    border-radius: 20px;
+    background-color: $contacts-bgc;
+
+    h2 {
+      align-self: center;
+    }
+
+    img {
+      border-radius: 50% 50% 20px 20px;
+      background-color: $header-footer-bgc;
+    }
+
+    span {
+      font-weight: bold;
+    }
+  }
 }
 </style>
