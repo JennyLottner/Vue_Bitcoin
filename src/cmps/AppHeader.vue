@@ -3,9 +3,9 @@
     <h1>Mr. Bitcoin</h1>
 
     <nav class="flex align-center justify-between">
-      <button><RouterLink to="/">Home</RouterLink></button>
-      <button><RouterLink to="/contacts">Contacts</RouterLink></button>
-      <button><RouterLink to="/stats">Stats</RouterLink></button>
+      <RouterLink to="/"><button>Home</button></RouterLink>
+      <RouterLink to="/contact"><button>Contacts</button></RouterLink>
+      <RouterLink to="/stats"><button>Stats</button></RouterLink>
     </nav>
   </header>
 </template>
@@ -15,7 +15,7 @@ export default {};
 </script>
 
 <style lang="scss">
-@import '../assets/style/basics/vars';
+@import "../assets/style/basics/vars";
 
 .app-header {
   padding: 10px;
@@ -30,7 +30,7 @@ export default {};
       border: none;
 
       &:hover {
-        background-color:$header-footer-bgc-hover;
+        background-color: $header-footer-bgc-hover;
       }
 
       a.router-link-exact-active {

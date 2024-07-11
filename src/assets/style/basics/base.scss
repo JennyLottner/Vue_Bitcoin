@@ -9,7 +9,8 @@
   h5,
   h6,
   p,
-  body {
+  body,
+  ul {
     margin: 0;
     padding: 0;
   }
@@ -26,5 +27,7 @@
     background-color: transparent;
     border: 0.667px solid gray;
     border-radius: 5px;
+
+    cursor: pointer;
   }
   

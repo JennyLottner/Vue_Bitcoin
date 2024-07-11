@@ -13,8 +13,6 @@
 .app-footer {
   padding: 10px;
   background-color: $header-footer-bgc;
-  position: fixed;
-  inset: auto 0 0 0;
 
   p {
     color: $blue-text;
