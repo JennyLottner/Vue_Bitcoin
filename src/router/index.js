@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomePage from '../pages/HomePage.vue'
 import ContactIndex from '../pages/ContactIndex.vue'
+import ContactDetails from '../pages/ContactDetails.vue'
 
 
 const router = createRouter({
@@ -19,7 +20,7 @@ const router = createRouter({
     {
       path: '/contact/:id',
       name: 'details',
-      component: HomePage
+      component: ContactDetails
     },
     {
       path: '/stats',

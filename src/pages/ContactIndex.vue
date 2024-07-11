@@ -14,7 +14,6 @@ export default {
     async loadContacts() {
       try {
         this.contacts = await contactService.getContacts(this.filterBy)
-        console.log(this.contacts)
       } catch (err) {
         console.log(err)
       }
