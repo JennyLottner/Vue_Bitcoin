@@ -1,12 +1,10 @@
 export const contactService = {
     getContacts,
     getContactById,
-    deleteContact,
+    removeContact,
     saveContact,
     getEmptyContact
 }
-
-
 
 const contacts = [
     {
@@ -123,7 +121,7 @@ const contacts = [
         "email": "lillyconner@renovize.com",
         "phone": "+1 (842) 587-3812"
     }
-];
+]
 
 function sort(arr) {
     return arr.sort((a, b) => {
@@ -142,7 +140,7 @@ function getContacts(filterBy = null) {
     return new Promise((resolve, reject) => {
         var contactsToReturn = contacts;
         if (filterBy && filterBy.term) {
-            contactsToReturn = filter(filterBy.term)
+            contactsToReturn = _filterTxt(filterBy.term)
         }
         resolve(sort(contactsToReturn))
     })
@@ -155,13 +153,12 @@ function getContactById(id) {
     })
 }
 
-function deleteContact(id) {
+function removeContact(id) {
     return new Promise((resolve, reject) => {
         const index = contacts.findIndex(contact => contact._id === id)
         if (index !== -1) {
             contacts.splice(index, 1)
         }
-
         resolve(contacts)
     })
 }
@@ -196,7 +193,7 @@ function getEmptyContact() {
     }
 }
 
-function filter(term) {
+function _filterTxt(term) {
     term = term.toLocaleLowerCase()
     return contacts.filter(contact => {
         return contact.name.toLocaleLowerCase().includes(term) ||
@@ -204,8 +201,6 @@ function filter(term) {
             contact.email.toLocaleLowerCase().includes(term)
     })
 }
-
-
 
 function _makeId(length = 10) {
     var txt = ''
