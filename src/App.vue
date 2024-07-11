@@ -1,19 +1,19 @@
 <script>
-  // import AppHeader from './cmps/AppHeader.vue'
-  // import AppFooter from './cmps/AppFooter.vue'
+import AppHeader from "./cmps/AppHeader.vue";
+import AppFooter from "./cmps/AppFooter.vue";
 
 export default {
   components: {
-    // AppHeader,
-    // AppFooter
-  }
-}
+    AppHeader,
+    AppFooter,
+  },
+};
 </script>
 
 <template>
-  <!-- <AppHeader /> -->
+  <AppHeader />
   <RouterView />
-  <!-- <AppFooter /> -->
+  <AppFooter />
 </template>
 
 <style>
