@@ -1,6 +1,6 @@
 <template>
   <footer class="app-footer flex center">
-    <p>Vue site by <button><RouterLink to="/about">©Jenny Tover</RouterLink></button></p>
+    <p>Vue site by <RouterLink to="/about"><button>©Jenny Tover</button></RouterLink></p>
   </footer>
 </template>
 

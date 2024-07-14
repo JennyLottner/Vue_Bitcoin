@@ -2,9 +2,9 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import HomePage from '../pages/HomePage.vue'
 import ContactIndex from '../pages/ContactIndex.vue'
 import ContactDetails from '../pages/ContactDetails.vue'
+import ContactEdit from '../pages/ContactEdit.vue'
 import StatsPage from '../pages/StatsPage.vue'
-import About from '../pages/About.vue'
-
+import AboutPage from '../pages/AboutPage.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -25,6 +25,11 @@ const router = createRouter({
       component: ContactDetails
     },
     {
+      path: '/contact/edit/:_id?',
+      name: 'edit',
+      component: ContactEdit
+    },
+    {
       path: '/stats',
       name: 'stats',
       component: StatsPage
@@ -32,7 +37,7 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      component: About
+      component: AboutPage
     },
   ]
 })

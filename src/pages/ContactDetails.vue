@@ -40,6 +40,11 @@ export default {
   padding: 10px;
   position: relative;
 
+  h1 {
+    margin-block-start: 10px;
+    align-self: center;
+  }
+
   .back-btn {
     position: absolute;
     inset: 20px auto auto 20px;

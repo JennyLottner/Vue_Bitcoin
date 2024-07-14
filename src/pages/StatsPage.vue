@@ -2,15 +2,15 @@
 // import LineChart from '@/cmps/LineChart.vue'
 
 export default {
-    components: {
+  components: {
     // LineChart
-  }
-}
+  },
+};
 </script>
 
 <template>
-  <section class="stats-page">
-    <h1>stats</h1>
+  <section class="stats-page flex column">
+    <h1>Statistics</h1>
     <!-- <LineChart /> -->
   </section>
 </template>
@@ -21,5 +21,10 @@ export default {
 
 .stats-page {
   padding: 10px 10px 20px;
+
+  h1 {
+    margin-block-start: 10px;
+    align-self: center;
+  }
 }
 </style>
