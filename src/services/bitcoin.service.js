@@ -18,7 +18,7 @@ async function getMarketPriceHistory() {
   const marketPrices = JSON.parse(localStorage.getItem(MARKET_PRICES_KEY))
 
   if (marketPrices && marketPrices.length) {
-    // console.log('MARKET PRICE FROM CACHE')
+    // console.log('Market Price From Cache')
     return Promise.resolve(marketPrices)
   }
 
@@ -38,7 +38,7 @@ async function getAvgBlockSize() {
   const avgBlockSize = JSON.parse(localStorage.getItem(AVG_BLOCK_SIZE_KEY))
 
   if (avgBlockSize && avgBlockSize.length) {
-    // console.log('TRANSACTIONS FROM CACHE')
+    // console.log('Transactions from cache')
     return Promise.resolve(avgBlockSize)
   }
 
