@@ -39,6 +39,7 @@ export default {
   
   fieldset {
     margin: 20px 15px;
+    padding: 10px 20px 20px;
 
     p:first-of-type {
       margin-block: 8px 15px;

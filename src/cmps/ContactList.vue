@@ -20,9 +20,8 @@ export default {
       <ContactPreview :contact="contact"/>
       <section class="actions flex justify-evenly">
         <button class="remove-btn" @click="onRemove(contact._id)">Remove</button>
-        <RouterLink :to="`/contact/${contact._id}`"
-          ><button class="details-btn">Details</button></RouterLink
-        >
+        <RouterLink :to="`/contact/${contact._id}`"><button class="details-btn">Details</button></RouterLink>
+        <RouterLink :to="`/contact/edit/${contact._id}`"><button class="edit-btn">Edit</button></RouterLink>
       </section>
     </li>
   </ul>

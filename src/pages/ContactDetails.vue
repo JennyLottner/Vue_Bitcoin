@@ -61,6 +61,7 @@ export default {
     margin-block-start: 20px;
     border-radius: 20px;
     background-color: $contacts-bgc;
+    min-width: 300px;
 
     h2 {
       align-self: center;

@@ -25,14 +25,5 @@ export default {
 .contacts-filter {
     margin-block: 10px 20px;
     padding-block: 0;
-
-    input {
-        width: 100%;
-        padding: 10px 5px;
-        border: none; 
-        border-radius: 40px;
-        outline: none;
-    }
 }
-
 </style>

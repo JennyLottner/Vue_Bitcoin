@@ -47,9 +47,7 @@ export default {
 
 <template>
   <section class="contacts flex column">
-    <RouterLink to="/contact/edit"
-      ><button class="add-btn">Add contact</button></RouterLink
-    >
+    <RouterLink to="/contact/edit"><button class="add-btn">Add contact</button></RouterLink>
     <h1>Contacts</h1>
     <ContactFilter @loadContacts="loadContacts" />
     <ContactList @onRemove="onRemove" :contacts="contacts" />

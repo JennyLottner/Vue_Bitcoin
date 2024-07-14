@@ -1,51 +1,57 @@
 @import "../basics/vars.scss";
 
 * {
-    box-sizing: border-box;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  body,
-  ul {
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  padding: 3px 8px;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+fieldset {
+  border-radius: 20px;
+  border-color: $header-footer-bgc-hover;
+
+  legend {
+    color: $header-footer-bgc-hover;
+    font-weight: bold;
   }
 
-  a {
-    text-decoration: none;
-  }
-  
-  img {
-    max-width: 100%;
-  }
-
-  button {
+  input {
+    width: 100%;
+    padding: 10px 5px;
     border: none;
-    border-radius: 5px;
-    padding: 3px 8px;
-    background-color: transparent;
-
-    cursor: pointer;
+    border-radius: 40px;
+    outline: none;
   }
 
-  fieldset {
-    padding: 10px 20px 20px;
-    border-radius: 20px;
-    border-color: $header-footer-bgc-hover;
-
-    legend {
-      color: $header-footer-bgc-hover;
-      font-weight: bold;
-    }
-
-    span {
-      font-weight: bold;
-    }
+  span {
+    font-weight: bold;
   }
-  
+}
