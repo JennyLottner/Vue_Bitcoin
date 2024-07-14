@@ -120,19 +120,6 @@ export default {
   margin-block: 16px;
 
   fieldset {
-    padding: 10px 20px 20px;
-    border-radius: 20px;
-    border-color: $header-footer-bgc-hover;
-
-    legend {
-      color: $header-footer-bgc-hover;
-      font-weight: bold;
-    }
-
-    span {
-      font-weight: bold;
-    }
-
     ul {
       padding-inline: 10px;
     }

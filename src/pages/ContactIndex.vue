@@ -1,19 +1,20 @@
 <script>
 import { contactService } from "@/services/contactService.js"
+
 import ContactList from "@/cmps/ContactList.vue"
+import ContactFilter from "@/cmps/ContactFilter.vue"
 
 export default {
   data() {
     return {
       contacts: null,
-      filterBy: null,
-    };
+    }
   },
 
   methods: {
-    async loadContacts() {
+    async loadContacts(filterBy = null) {
       try {
-        this.contacts = await contactService.getContacts(this.filterBy)
+        this.contacts = await contactService.getContacts(filterBy)
       } catch (err) {
         console.log(err)
       }
@@ -37,6 +38,7 @@ export default {
 
   components: {
     ContactList,
+    ContactFilter
   },
 };
 </script>
@@ -44,6 +46,7 @@ export default {
 <template>
   <section class="contacts flex column">
     <h1>Contacts</h1>
+    <ContactFilter @loadContacts="loadContacts" />
     <ContactList @onRemove="onRemove" :contacts = "contacts" />
   </section>
 </template>
@@ -56,7 +59,6 @@ export default {
   padding: 10px 10px 20px;
 
   h1 {
-    margin-block-end: 20px;
     align-self: center;
   }
 }
