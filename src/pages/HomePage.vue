@@ -8,8 +8,8 @@ export default {
       bitRate: null,
     }},
     async created() {
-      // try{ this.bitRate = await bitcoinService.getRate(this.user.balance)}
-      try{ this.bitRate = 0.00172717}
+      try{ this.bitRate = await bitcoinService.getRate(this.user.balance)}
+      // try{ this.bitRate = 0.00172717}
       catch(err) {console.log(err)}
     }
 }
