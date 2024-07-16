@@ -1,5 +1,6 @@
 <script>
 import { contactService } from "@/services/contactService.js"
+import { showErrorMsg, showSuccessMsg } from '@/services/event-bus.service'
 
 export default {
   data() {
@@ -13,8 +14,9 @@ export default {
       try {
         await contactService.saveContact(this.contact)
         this.$router.push('/contact')
+        showSuccessMsg('contact saved')
       } catch (err) {
-        console.log(err)
+        showErrorMsg(`couldn't save contact`)
       }
     }
   },

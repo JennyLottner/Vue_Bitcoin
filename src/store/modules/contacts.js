@@ -29,9 +29,9 @@ export default {
                 throw `Couldn't load contacts`
             }
         },
-        async removeContact({ commit }, { contactId }) {
+        async removeContact({ commit }, contactId) {
             try {
-                await contactService.remove(contactId)
+                await contactService.removeContact(contactId)
                 commit('removeContact', contactId)
             } catch (err) {
                 console.log(err)
