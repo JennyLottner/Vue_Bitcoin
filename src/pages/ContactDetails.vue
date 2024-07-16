@@ -1,21 +1,21 @@
 <script>
-import { contactService } from "@/services/contactService";
+import { contactService } from "@/services/contactService"
 
 export default {
   data() {
     return {
       contactId: this.$route.params.id,
       contact: null,
-    };
+    }
   },
   async created() {
     try {
-      this.contact = await contactService.getContactById(this.contactId);
+      this.contact = await contactService.getContactById(this.contactId)
     } catch (err) {
-      console.log(err);
+      console.log(err)
     }
   },
-};
+}
 </script>
 
 <template>
@@ -25,7 +25,7 @@ export default {
       <h1>Contact Details</h1>
     <div class="contact flex column">
       <h2>{{ contact.name }}</h2>
-      <img :src="`https://robohash.org/${contact.name}.png?size=150x150`" alt="Robot Image"/>
+      <img :src="`https://robohash.org/${contact.name}.png?size=200x200`" alt="Robot Image"/>
       <p><span>Phone:</span> {{ contact.phone }}</p>
       <p><span>Email:</span> {{ contact.email }}</p>
     </div>

@@ -5,7 +5,7 @@ export default {
   components: {
     // LineChart
   },
-};
+}
 </script>
 
 <template>

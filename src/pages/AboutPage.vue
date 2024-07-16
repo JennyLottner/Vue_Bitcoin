@@ -1,5 +1,5 @@
 <script>
-import CvListPreview from "@/cmps/CvListPreview.vue";
+import CvListPreview from "@/cmps/CvListPreview.vue"
 
 export default {
   data() {
@@ -42,13 +42,13 @@ export default {
         },
       ],
       languages: ["English", "Hebrew"],
-    };
+    }
   },
 
   components: {
     CvListPreview,
   },
-};
+}
 </script>
 
 <template>

@@ -126,19 +126,19 @@ const contacts = [
 function sort(arr) {
     return arr.sort((a, b) => {
         if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) {
-            return -1;
+            return -1
         }
         if (a.name.toLocaleLowerCase() > b.name.toLocaleLowerCase()) {
-            return 1;
+            return 1
         }
 
-        return 0;
+        return 0
     })
 }
 
 function getContacts(filterBy = null) {
     return new Promise((resolve, reject) => {
-        var contactsToReturn = contacts;
+        var contactsToReturn = contacts
         if (filterBy) {
             contactsToReturn = _filterTxt(filterBy)
         }
