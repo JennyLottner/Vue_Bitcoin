@@ -1,38 +1,45 @@
 <script>
 import { contactService } from "@/services/contactService.js"
+import { showErrorMsg, showSuccessMsg } from '@/services/event-bus.service'
 
 import ContactList from "@/cmps/ContactList.vue"
 import ContactFilter from "@/cmps/ContactFilter.vue"
 
 export default {
-  data() {
-    return {
-      contacts: null,
-    }
-  },
+  data() { return {} },
 
   methods: {
     async loadContacts(filterBy = null) {
       try {
-        this.contacts = await contactService.getContacts(filterBy)
+        this.$store.dispatch('loadContacts', filterBy)
       } catch (err) {
         console.log(err)
       }
     },
 
     async onRemove(contactId) {
-      try {   // supposed to be the other way but then they remove 2 instead of 1...
-        const idx = this.contacts.findIndex(contact => contact._id === contactId)
-        this.contacts.splice(idx, 1) // remove from state
-        await contactService.removeContact(contactId) // remove from DB
+      try {
+        this.$store.dispatch('removeContact', contactId)
+        //   await contactService.removeContact(contactId) // remove from DB
+          const idx = this.contacts.findIndex(contact => contact._id === contactId)
+          this.contacts.splice(idx, 1) // remove from state
+        showSuccessMsg(`Contact deleted`)
       } catch (err) {
-        console.log(err)
+        showErrorMsg(`Couldn't delete contact`)
       }
     },
   },
 
+  computed: {
+    contacts() { return this.$store.getters.contacts }
+  },
+
   async created() {
-    this.loadContacts()
+    try {
+      this.loadContacts()
+    } catch (err) {
+      console.log(err)
+    }
   },
 
   components: {

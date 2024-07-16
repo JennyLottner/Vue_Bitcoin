@@ -22,7 +22,7 @@ export default {
   img {
     border-radius: 40% 10px 40% 10px;
     background-color: $img-bgc;
-    width: 50%;
+    max-width: 50%;
   }
 }
 </style>
