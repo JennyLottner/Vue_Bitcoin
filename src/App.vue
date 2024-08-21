@@ -13,7 +13,12 @@ export default {
 <template>
   <AppHeader />
   <main>
-    <RouterView />
+    <!-- <RouterView /> -->
+    <router-view v-slot="{ Component }">
+      <transition name="slide" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </main>
   <AppFooter />
 </template>
@@ -27,5 +32,21 @@ export default {
 
 main {
   flex-grow: 1;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  opacity: 1;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.slide-enter-from {
+  opacity: 0;
+  transform: translateX(-75%) rotate(45deg);
+}
+
+.slide-leave-to {
+  opacity: 0;
+  transform: translateX(75%) rotate(-45deg);
 }
 </style>
