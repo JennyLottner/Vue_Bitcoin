@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { utilService } from './util.service.js'
+import { storageService } from './storage.service'
 
 const RATE_KEY = 'rateDB'
 const MARKET_PRICES_KEY = 'marketPricesDB'
@@ -13,8 +13,8 @@ export const bitcoinService = {
 
 async function getRate(balance) {
   try {
-    const rate = utilService.loadFromStorage(RATE_KEY) || await axios.get(`https://blockchain.info/tobtc?currency=USD&value=${balance}`)
-    if (rate.data) utilService.saveToStorage(RATE_KEY, rate.data)
+    const rate = storageService.loadFromStorage(RATE_KEY) || await axios.get(`https://blockchain.info/tobtc?currency=USD&value=${balance}`)
+    if (rate.data) storageService.saveToStorage(RATE_KEY, rate.data)
     return rate.data || rate
   } catch (err) {
     console.log(err)
@@ -23,7 +23,7 @@ async function getRate(balance) {
 
 async function getMarketPriceHistory() {
   try {
-    let marketPrices = utilService.loadFromStorage(MARKET_PRICES_KEY) || await axios.get('https://api.blockchain.info/charts/market-price?timespan=1months&format=json&cors=true')
+    let marketPrices = storageService.loadFromStorage(MARKET_PRICES_KEY) || await axios.get('https://api.blockchain.info/charts/market-price?timespan=1months&format=json&cors=true')
     if (marketPrices.data) {
       let marketPricesNew = { dates: [], prices: [] }
       marketPrices.data.values.forEach(val => {
@@ -31,7 +31,7 @@ async function getMarketPriceHistory() {
         marketPricesNew.prices.push(val.y)
       })
       marketPrices = marketPricesNew
-      utilService.saveToStorage(MARKET_PRICES_KEY, marketPrices)
+      storageService.saveToStorage(MARKET_PRICES_KEY, marketPrices)
     }
     return marketPrices
   } catch (err) {
@@ -41,7 +41,7 @@ async function getMarketPriceHistory() {
 
 async function getAvgBlockSize() {
   try {
-    let avgBlockSize = utilService.loadFromStorage(AVG_BLOCK_SIZE_KEY) || await axios.get('https://api.blockchain.info/charts/avg-block-size?timespan=1months&format=json&cors=true')
+    let avgBlockSize = storageService.loadFromStorage(AVG_BLOCK_SIZE_KEY) || await axios.get('https://api.blockchain.info/charts/avg-block-size?timespan=1months&format=json&cors=true')
     if (avgBlockSize.data) {
       let avgBlockSizeNew = { dates: [], prices: [] }
       avgBlockSize = avgBlockSize.data.values.forEach(val => {
@@ -49,7 +49,7 @@ async function getAvgBlockSize() {
         avgBlockSizeNew.prices.push(val.y)
       })
       avgBlockSize = avgBlockSizeNew
-      utilService.saveToStorage(AVG_BLOCK_SIZE_KEY, avgBlockSize)
+      storageService.saveToStorage(AVG_BLOCK_SIZE_KEY, avgBlockSize)
     }
     return avgBlockSize
   } catch (err) {
