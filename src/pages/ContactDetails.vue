@@ -10,7 +10,7 @@ export default {
   },
   async created() {
     try {
-      this.contact = await contactService.getContactById(this.contactId)
+      this.contact = await contactService.getById(this.contactId)
     } catch (err) {
       console.log(err)
     }

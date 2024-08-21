@@ -1,6 +1,6 @@
 <script>
 import { contactService } from "@/services/contactService.js"
-import { showErrorMsg, showSuccessMsg } from '@/services/event-bus.service'
+import { showErrorMsg, showSuccessMsg } from '@/services/eventBus.service'
 
 export default {
   data() {
@@ -12,7 +12,7 @@ export default {
   methods: {
     async onSave() {
       try {
-        await contactService.saveContact(this.contact)
+        await contactService.save(this.contact)
         this.$router.push('/contact')
         showSuccessMsg('contact saved')
       } catch (err) {
@@ -24,7 +24,7 @@ export default {
   async created() {
     try {
       const contactId = this.$route.params._id
-      this.contact = contactId ? await contactService.getContactById(contactId) : contactService.getEmptyContact()
+      this.contact = contactId ? await contactService.getById(contactId) : contactService.getEmptyContact()
     } catch (err) {
       console.log(err)
     }

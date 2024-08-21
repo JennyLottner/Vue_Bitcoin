@@ -1,5 +1,5 @@
 <script>
-import { eventBusService } from '@/services/event-bus.service.js'
+import { eventBusService } from '@/services/eventBus.service.js'
 
 export default {
 	data() {
