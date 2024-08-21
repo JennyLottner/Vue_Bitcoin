@@ -54,6 +54,7 @@ export default {
   h1 {
     margin-block-start: 10px;
     align-self: center;
+    letter-spacing: 0.5px;
   }
 
   h2 {
