@@ -51,13 +51,13 @@ export default {
 @import "../assets/style/basics/helpers";
 
 .about-page {
-  gap: 1rem;
+  gap: 0.8rem;
 
-  padding: 1rem 2rem;
-  line-height: 1.45;
+  padding: 1rem 1.5rem;
+  line-height: 1.4;
 
   fieldset {
-    padding: 0.5rem 1.5rem 1rem;
+    padding: 0.25rem 1.5rem 1rem;
     border-radius: $fieldset-borders;
 
     legend {

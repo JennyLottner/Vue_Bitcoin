@@ -19,11 +19,15 @@ export default {}
 @import "../assets/style/basics/vars";
 
 .app-header {
-  padding: 0.625rem 2rem;
+  padding: 0.5rem 1.5rem;
   background-color: $header-footer-bgc;
 
+  h1 {
+    font-size: 1.5rem;
+  }
+
   nav {
-    gap: 10px;
+    gap: 0.5rem;
 
     button:hover {
       background-color: $header-footer-bgc-hover;

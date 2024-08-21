@@ -1,6 +1,7 @@
 @mixin cornerBtn {
     position: absolute;
     inset: 0 auto auto 0;
+    padding: 0.45rem 0.8rem;
     background-color: $contacts-bgc;
 
     &:hover {

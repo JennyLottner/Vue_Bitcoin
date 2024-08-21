@@ -46,7 +46,7 @@ export default {
 @import "../assets/style/basics/mixins";
 
 .details-page {
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
 
   header {
     position: relative;

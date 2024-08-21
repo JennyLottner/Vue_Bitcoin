@@ -30,5 +30,14 @@ export default {
 .contacts-filter {
   margin-block: 10px 20px;
   padding-block: 0;
+  width: 100%;
+  max-width: 800px;
+  align-self: center;
+}
+
+@media (width > 742px) {
+  .contacts-filter {
+    width: 50%;
+  }
 }
 </style>

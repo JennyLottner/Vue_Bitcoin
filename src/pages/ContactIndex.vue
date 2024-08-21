@@ -72,7 +72,7 @@ export default {
 @import "../assets/style/basics/mixins";
 
 .contacts {
-  padding: 1.5rem 2rem;
+  padding: 1.5rem;
   gap: 0.5rem;
   
   header {

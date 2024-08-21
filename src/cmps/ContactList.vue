@@ -17,17 +17,13 @@ export default {
 <template>
   <TransitionGroup class="contact-list grid" name="list" tag="ul">
     <li v-for="contact in contacts" :key="contact._id">
+      
       <ContactPreview :contact="contact" />
+
       <section class="actions flex justify-evenly">
-        <button class="remove-btn" @click="onRemove(contact._id)">
-          Remove
-        </button>
-        <RouterLink :to="`/contact/${contact._id}`"
-          ><button class="details-btn">Details</button></RouterLink
-        >
-        <RouterLink :to="`/contact/edit/${contact._id}`"
-          ><button class="edit-btn">Edit</button></RouterLink
-        >
+        <button class="remove-btn" @click="onRemove(contact._id)">Remove</button>
+        <RouterLink :to="`/contact/${contact._id}`"><button class="details-btn">Details</button></RouterLink>
+        <RouterLink :to="`/contact/edit/${contact._id}`"><button class="edit-btn">Edit</button></RouterLink>
       </section>
     </li>
   </TransitionGroup>
@@ -50,7 +46,7 @@ export default {
 
     button {
       background-color: $header-footer-bgc;
-      padding: 3px 8px;
+      padding: 4px 8px;
 
       &:hover {
         background-color: $header-footer-bgc-hover;

@@ -36,7 +36,7 @@ export default {
 @import "../assets/style/basics/vars";
 
 .home-page {
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
 
   grid-template-rows: repeat(2, 1fr);
   gap: 1rem;

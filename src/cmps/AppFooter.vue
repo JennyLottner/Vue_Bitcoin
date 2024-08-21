@@ -11,15 +11,16 @@
 @import "../assets/style/basics/vars";
 
 .app-footer {
-  padding: 10px;
+  padding: 0.4rem;
   background-color: $header-footer-bgc;
+  font-size: 0.9rem;
 
   p {
     color: $blue-text;
 
     button {
       color: $blue-text;
-      padding: 2px 5px;
+      padding: 2px 10px 2px 5px;
 
       &:hover {
         background-color: $header-footer-bgc-hover;

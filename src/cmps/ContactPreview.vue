@@ -19,7 +19,7 @@ export default {
   gap: 5px;
   margin-block-end: 10px;
   width: 100%;
-  height: calc(100% - 40px);
+  height: calc(100% - 35px);
 
   img {
     border-radius: 40% 10px 40% 10px;

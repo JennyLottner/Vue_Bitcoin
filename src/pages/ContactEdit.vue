@@ -72,7 +72,7 @@ export default {
 @import "../assets/style/basics/mixins";
 
 .edit-page {
-  padding: 1.5rem 2rem;
+  padding: 1.5rem;
 
   header {
     position: relative;
