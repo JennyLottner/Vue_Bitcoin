@@ -4,6 +4,8 @@ import ContactIndex from '../pages/ContactIndex.vue'
 import ContactDetails from '../pages/ContactDetails.vue'
 import ContactEdit from '../pages/ContactEdit.vue'
 import StatsPage from '../pages/StatsPage.vue'
+import LineChart from '../cmps/LineChart.vue'
+import BarChart from '../cmps/BarChart.vue'
 import AboutPage from '../pages/AboutPage.vue'
 
 const router = createRouter({
@@ -32,7 +34,21 @@ const router = createRouter({
     {
       path: '/stats',
       name: 'stats',
-      component: StatsPage
+      component: StatsPage,
+      children: [
+        {
+          path: 'line',
+          name: 'lineChart',
+          component: LineChart,
+          props: true
+        },
+        {
+          path: 'bar',
+          name: 'barChart',
+          component: BarChart,
+          props: true
+        }
+      ]
     },
     {
       path: '/about',
