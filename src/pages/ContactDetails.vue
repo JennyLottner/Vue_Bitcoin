@@ -43,6 +43,7 @@ export default {
 <style lang="scss">
 @import "../assets/style/basics/vars";
 @import "../assets/style/basics/helpers";
+@import "../assets/style/basics/mixins";
 
 .details-page {
   padding: 1rem 2rem;
@@ -52,14 +53,7 @@ export default {
     width: 100%;
 
     .back-btn {
-      position: absolute;
-      padding: 0.4rem 0.8rem;
-      inset: 0 auto auto 0;
-      background-color: $contacts-bgc;
-
-      &:hover {
-        background-color: $header-footer-bgc;
-      }
+      @include cornerBtn;
     }
   }
 

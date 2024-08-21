@@ -28,8 +28,8 @@ img {
 
 button {
   border: none;
-  border-radius: 5px;
-  padding: 3px 8px;
+  border-radius: $btn-borders;
+  padding: 0.4rem 0.8rem;
   background-color: transparent;
   font-size: 1rem;
 

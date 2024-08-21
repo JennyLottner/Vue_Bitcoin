@@ -1,0 +1,9 @@
+@mixin cornerBtn {
+    position: absolute;
+    inset: 0 auto auto 0;
+    background-color: $contacts-bgc;
+
+    &:hover {
+        background-color: $header-footer-bgc;
+    }
+}

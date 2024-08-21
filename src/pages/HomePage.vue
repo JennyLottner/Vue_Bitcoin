@@ -11,7 +11,6 @@ export default {
   },
   async created() {
     try { this.bitRate = await bitcoinService.getRate(this.user.balance) }
-    // try{ this.bitRate = 0.00172717}
     catch (err) { console.log(err) }
   }
 }
@@ -44,6 +43,7 @@ export default {
 
   fieldset {
     padding: 0.25rem 1.5rem 1rem;
+    border-radius: $fieldset-borders;
 
     legend {
       font-size: 1.25rem;
