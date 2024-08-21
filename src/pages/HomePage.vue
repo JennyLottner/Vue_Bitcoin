@@ -3,15 +3,17 @@ import { userService } from "@/services/user.service.js"
 import { bitcoinService } from "@/services/bitcoin.service.js"
 
 export default {
-  data() { return {
+  data() {
+    return {
       user: userService.getUser(),
       bitRate: null,
-    }},
-    async created() {
-      try{ this.bitRate = await bitcoinService.getRate(this.user.balance)}
-      // try{ this.bitRate = 0.00172717}
-      catch(err) {console.log(err)}
     }
+  },
+  async created() {
+    try { this.bitRate = await bitcoinService.getRate(this.user.balance) }
+    // try{ this.bitRate = 0.00172717}
+    catch (err) { console.log(err) }
+  }
 }
 </script>
 
@@ -35,15 +37,28 @@ export default {
 @import "../assets/style/basics/vars";
 
 .home-page {
-  grid-template-columns: repeat(2, 1fr);
-  
+  padding: 1rem 2rem;
+
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+
   fieldset {
-    margin: 20px 15px;
-    padding: 10px 20px 20px;
+    padding: 0.25rem 1.5rem 1rem;
+
+    legend {
+      font-size: 1.25rem;
+    }
 
     p:first-of-type {
       margin-block: 8px 15px;
     }
+  }
+}
+
+@media (width > 742px) {
+  .home-page {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
   }
 }
 </style>

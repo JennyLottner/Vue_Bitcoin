@@ -52,11 +52,16 @@ export default {
 
 <template>
   <section class="contacts flex column">
-    <RouterLink to="/contact/edit">
-      <button class="add-btn">Add contact</button>
-    </RouterLink>
-    <h1>Contacts</h1>
+
+    <header class="flex center">
+      <RouterLink to="/contact/edit">
+        <button class="add-btn">Add contact</button>
+      </RouterLink>
+      <h1>Contacts</h1>
+    </header>
+
     <ContactFilter @loadContacts="loadContacts" />
+
     <ContactList @onRemove="onRemove" :contacts="contacts" />
   </section>
 </template>
@@ -66,21 +71,21 @@ export default {
 @import "../assets/style/basics/helpers";
 
 .contacts {
-  position: relative;
-  padding: 10px 10px 20px;
+  padding: 1.5rem 2rem;
+  gap: 0.5rem;
 
-  h1 {
-    margin-block-start: 10px;
-    align-self: center;
-  }
+  header {
+    position: relative;
 
-  .add-btn {
-    position: absolute;
-    inset: 20px auto auto 20px;
-    background-color: $contacts-bgc;
+    .add-btn {
+      position: absolute;
+      padding: 0.4rem 0.8rem;
+      inset: 0 auto auto 0;
+      background-color: $contacts-bgc;
 
-    &:hover {
-      background-color: $header-footer-bgc;
+      &:hover {
+        background-color: $header-footer-bgc;
+      }
     }
   }
 }

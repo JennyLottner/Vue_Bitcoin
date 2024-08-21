@@ -45,7 +45,11 @@ export default {
 @import "../assets/style/basics/vars";
 
 .stats-page {
-  padding: 10px 10px 20px;
+  padding: 1rem 2rem;
+
+  .chart-container {
+    margin-block-end: 2rem;
+  }
 
   h1 {
     margin-block-start: 10px;

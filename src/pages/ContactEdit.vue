@@ -34,10 +34,12 @@ export default {
 
 <template>
   <section class="edit-page flex column">
-    <RouterLink to="/contact"
-      ><button class="back-btn">Back</button></RouterLink
-    >
-    <h1>Edit Contact</h1>
+    <header class="flex center">
+      <RouterLink to="/contact">
+        <button class="back-btn">Back</button>
+      </RouterLink>
+      <h1>Edit Contact</h1>
+    </header>
 
     <div v-if="!contact">loading...</div>
     <form v-else @submit.prevent="onSave" class="flex column align-center">
@@ -69,21 +71,20 @@ export default {
 @import "../assets/style/basics/helpers";
 
 .edit-page {
-  padding: 10px;
-  position: relative;
+  padding: 1.5rem 2rem;
 
-  h1 {
-    margin-block-start: 10px;
-    align-self: center;
-  }
+  header {
+    position: relative;
 
-  .back-btn {
-    position: absolute;
-    inset: 20px auto auto 20px;
-    background-color: $contacts-bgc;
+    .back-btn {
+      position: absolute;
+      padding: 0.4rem 0.8rem;
+      inset: 0 auto auto 0;
+      background-color: $contacts-bgc;
 
-    &:hover {
-      background-color: $header-footer-bgc;
+      &:hover {
+        background-color: $header-footer-bgc;
+      }
     }
   }
 

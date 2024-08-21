@@ -21,11 +21,19 @@ export default {
 <template>
   <p v-if="!contact">loading</p>
   <section v-else class="details-page flex column align-center">
-      <RouterLink to="/contact"><button class="back-btn">Back</button></RouterLink>
+    <header class="flex center">
+      <RouterLink to="/contact">
+        <button class="back-btn">Back</button>
+      </RouterLink>
       <h1>Contact Details</h1>
+    </header>
+
     <div class="contact flex column">
       <h2>{{ contact.name }}</h2>
-      <img :src="`https://robohash.org/${contact.name}.png?size=200x200`" alt="Robot Image"/>
+      <img
+        :src="`https://robohash.org/${contact.name}.png?size=200x200`"
+        alt="Robot Image"
+      />
       <p><span>Phone:</span> {{ contact.phone }}</p>
       <p><span>Email:</span> {{ contact.email }}</p>
     </div>
@@ -37,23 +45,23 @@ export default {
 @import "../assets/style/basics/helpers";
 
 .details-page {
-  padding: 10px;
-  position: relative;
+  padding: 1rem 2rem;
 
-  h1 {
-    margin-block-start: 10px;
-    align-self: center;
-  }
+  header {
+    position: relative;
+    width: 100%;
 
-  .back-btn {
-    position: absolute;
-    inset: 20px auto auto 20px;
-    background-color: $contacts-bgc;
-        
-    &:hover {
+    .back-btn {
+      position: absolute;
+      padding: 0.4rem 0.8rem;
+      inset: 0 auto auto 0;
+      background-color: $contacts-bgc;
+
+      &:hover {
         background-color: $header-footer-bgc;
+      }
     }
-}
+  }
 
   .contact {
     gap: 10px;
