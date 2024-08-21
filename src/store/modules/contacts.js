@@ -11,7 +11,7 @@ export default {
         setContacts(state, { contacts }) {
             state.contacts = contacts
         },
-        removeContact(state, { contactId }) {
+        remove(state, { contactId }) {
             const idx = state.contacts.findIndex(contact => contact._id === contactId)
             state.contacts.splice(idx, 1)
         }
@@ -22,17 +22,17 @@ export default {
     actions: {
         async loadContacts({ commit }, payload) {
             try {
-                const contacts = (payload) ? await contactService.getContacts(payload) : await contactService.getContacts()
+                const contacts = (payload) ? await contactService.query(payload) : await contactService.query()
                 commit('setContacts', { contacts })
             } catch (err) {
                 console.log(err)
                 throw `Couldn't load contacts`
             }
         },
-        async removeContact({ commit }, contactId) {
+        async remove({ commit }, contactId) {
             try {
-                await contactService.removeContact(contactId)
-                commit('removeContact', contactId)
+                await contactService.remove(contactId)
+                commit('remove', contactId)
             } catch (err) {
                 console.log(err)
                 throw `Couldn't remove contact`
