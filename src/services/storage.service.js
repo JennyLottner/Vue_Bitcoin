@@ -23,7 +23,7 @@ function loadFromStorage(key) {
 
 async function query(entityType) {
     var entities = loadFromStorage(entityType) || []
-    return new Promise(entities)
+    return Promise.resolve(entities)
 }
 
 async function get(entityType, entityId) {
