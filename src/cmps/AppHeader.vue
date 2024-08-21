@@ -6,6 +6,7 @@
       <RouterLink to="/"><button>Home</button></RouterLink>
       <RouterLink to="/contact"><button>Contacts</button></RouterLink>
       <RouterLink to="/stats"><button>Stats</button></RouterLink>
+      <RouterLink to="/about"><button>About</button></RouterLink>
     </nav>
   </header>
 </template>
@@ -30,10 +31,10 @@ export default {}
       &:hover {
         background-color: $header-footer-bgc-hover;
       }
+    }
 
-      a.router-link-exact-active {
-        color: $blue-text;
-      }
+    .router-link-active button {
+      color: $blue-text;
     }
   }
 }
