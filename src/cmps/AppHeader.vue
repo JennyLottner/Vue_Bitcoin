@@ -19,18 +19,14 @@ export default {}
 @import "../assets/style/basics/vars";
 
 .app-header {
-  padding: 10px;
+  padding: 0.625rem 2rem;
   background-color: $header-footer-bgc;
 
   nav {
     gap: 10px;
 
-    button {
-      padding: 4px 10px;
-
-      &:hover {
-        background-color: $header-footer-bgc-hover;
-      }
+    button:hover {
+      background-color: $header-footer-bgc-hover;
     }
 
     .router-link-active button {

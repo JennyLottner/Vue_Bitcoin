@@ -58,6 +58,7 @@ export default {
 
   fieldset {
     padding: 0.5rem 1.5rem 1rem;
+    border-radius: $fieldset-borders;
 
     legend {
       font-size: 1.25rem;

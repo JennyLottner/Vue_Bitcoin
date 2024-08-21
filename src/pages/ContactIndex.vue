@@ -69,23 +69,17 @@ export default {
 <style lang="scss">
 @import "../assets/style/basics/vars";
 @import "../assets/style/basics/helpers";
+@import "../assets/style/basics/mixins";
 
 .contacts {
   padding: 1.5rem 2rem;
   gap: 0.5rem;
-
+  
   header {
     position: relative;
-
+    
     .add-btn {
-      position: absolute;
-      padding: 0.4rem 0.8rem;
-      inset: 0 auto auto 0;
-      background-color: $contacts-bgc;
-
-      &:hover {
-        background-color: $header-footer-bgc;
-      }
+      @include cornerBtn;
     }
   }
 }

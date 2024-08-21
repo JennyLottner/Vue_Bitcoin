@@ -15,16 +15,24 @@ export default {
 </script>
 
 <template>
-  <ul class="contact-list grid">
+  <TransitionGroup class="contact-list grid" name="list" tag="ul">
+    <!-- <ul class="contact-list grid"> -->
     <li v-for="contact in contacts" :key="contact._id">
-      <ContactPreview :contact="contact"/>
+      <ContactPreview :contact="contact" />
       <section class="actions flex justify-evenly">
-        <button class="remove-btn" @click="onRemove(contact._id)">Remove</button>
-        <RouterLink :to="`/contact/${contact._id}`"><button class="details-btn">Details</button></RouterLink>
-        <RouterLink :to="`/contact/edit/${contact._id}`"><button class="edit-btn">Edit</button></RouterLink>
+        <button class="remove-btn" @click="onRemove(contact._id)">
+          Remove
+        </button>
+        <RouterLink :to="`/contact/${contact._id}`"
+          ><button class="details-btn">Details</button></RouterLink
+        >
+        <RouterLink :to="`/contact/edit/${contact._id}`"
+          ><button class="edit-btn">Edit</button></RouterLink
+        >
       </section>
     </li>
-  </ul>
+    <!-- </ul> -->
+  </TransitionGroup>
 </template>
 
 <style lang="scss">
@@ -38,16 +46,31 @@ export default {
 
   li {
     background-color: $contacts-bgc;
-    border-radius: 10px;
-    padding: 15px 20px;
+    border-radius: $fieldset-borders;
+    padding: 0.95rem 1.25rem;
+    max-height: 180px; 
 
     button {
       background-color: $header-footer-bgc;
+      padding: 3px 8px;
 
       &:hover {
         background-color: $header-footer-bgc-hover;
       }
     }
+  }
+  
+  .list-move,
+  .list-enter-active,
+  .list-leave-active {
+    transition: all 0.5s;
+  }
+
+  .list-enter-from,
+  .list-leave-to {
+    scale: 0.2;
+    opacity: 0;
+    rotate: 360deg;
   }
 }
 </style>

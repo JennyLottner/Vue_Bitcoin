@@ -33,6 +33,9 @@ export default {
         elements: {
           point: {
             radius: 0
+          },
+          bar: {
+            borderRadius: 5
           }
         }
       }

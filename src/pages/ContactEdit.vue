@@ -69,6 +69,7 @@ export default {
 <style lang="scss">
 @import "../assets/style/basics/vars";
 @import "../assets/style/basics/helpers";
+@import "../assets/style/basics/mixins";
 
 .edit-page {
   padding: 1.5rem 2rem;
@@ -77,14 +78,7 @@ export default {
     position: relative;
 
     .back-btn {
-      position: absolute;
-      padding: 0.4rem 0.8rem;
-      inset: 0 auto auto 0;
-      background-color: $contacts-bgc;
-
-      &:hover {
-        background-color: $header-footer-bgc;
-      }
+      @include cornerBtn;
     }
   }
 
@@ -103,9 +97,7 @@ export default {
     button {
       background-color: $contacts-bgc;
       margin-block: 10px;
-      padding: 5px 10px;
       align-self: center;
-      font-size: 1em;
 
       &:hover {
         background-color: $header-footer-bgc;
