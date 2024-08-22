@@ -52,7 +52,6 @@ export default {
 
 <template>
   <section class="contacts flex column">
-
     <header class="flex center">
       <RouterLink to="/contact/edit">
         <button class="add-btn">Add contact</button>
@@ -74,10 +73,10 @@ export default {
 .contacts {
   padding: 1.5rem;
   gap: 0.5rem;
-  
+
   header {
     position: relative;
-    
+
     .add-btn {
       @include cornerBtn;
     }

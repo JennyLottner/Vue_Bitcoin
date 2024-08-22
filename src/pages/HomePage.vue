@@ -5,19 +5,21 @@ import { bitcoinService } from "@/services/bitcoin.service.js"
 export default {
   data() {
     return {
-      user: userService.getUser(),
+      user: null,
       bitRate: null,
     }
   },
   async created() {
-    try { this.bitRate = await bitcoinService.getRate(this.user.balance) }
+    try { 
+      this.user = await userService.getUser()
+      this.bitRate = await bitcoinService.getRate(this.user.balance) }
     catch (err) { console.log(err) }
   }
 }
 </script>
 
 <template>
-  <section class="home-page grid">
+  <section v-if="user" class="home-page grid">
     <fieldset class="user-info">
       <legend>User Information</legend>
       <p><span>Name: </span>{{ user.name }}</p>

@@ -11,5 +11,5 @@ const user = {
 }
 
 function getUser() {
-  return user
+  return Promise.resolve(user)
 }
