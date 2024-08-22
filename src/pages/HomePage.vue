@@ -9,10 +9,16 @@ export default {
       bitRate: null,
     }
   },
+  computed: {
+    bitBalance() {
+      return this.bitRate * this.user.balance
+    },
+  },
   async created() {
-    try { 
+    try {
       this.user = await userService.getUser()
-      this.bitRate = await bitcoinService.getRate(this.user.balance) }
+      this.bitRate = await bitcoinService.getRate()
+    }
     catch (err) { console.log(err) }
   }
 }
@@ -28,6 +34,7 @@ export default {
     <fieldset class="bitcoin-info">
       <legend>Current Bitcoin Rate</legend>
       <p v-if="bitRate"><span>Rate: </span>{{ bitRate }}</p>
+      <p v-if="bitRate"><span>Balance: </span>{{ bitBalance }}</p>
       <p v-else>Loading rate...</p>
     </fieldset>
   </section>

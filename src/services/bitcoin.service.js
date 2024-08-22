@@ -13,9 +13,9 @@ export const bitcoinService = {
   getAvgBlockSize,
 }
 
-async function getRate(balance) {
+async function getRate() {
   try {
-    const rate = storageService.loadFromStorage(RATE_KEY) || await axios.get(`https://blockchain.info/tobtc?currency=USD&value=${balance}`)
+    const rate = storageService.loadFromStorage(RATE_KEY) || await axios.get(`https://blockchain.info/tobtc?currency=USD&value=1`)
     if (rate.data) storageService.saveToStorage(RATE_KEY, rate.data)
     return rate.data || rate
   } catch (err) {
