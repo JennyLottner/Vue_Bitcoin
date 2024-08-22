@@ -10,7 +10,7 @@ export default {
   methods: {
     showMsg(msg) {
       this.msg = msg
-      setTimeout(() => this.msg.txt = '', 2000000)
+      setTimeout(() => this.msg.txt = '', 2000)
     },
   },
   created() {
@@ -31,11 +31,10 @@ export default {
 <style lang="scss">
 .user-msg {
   position: fixed;
-  bottom: 40px;
-  right: 20px;
+  bottom: 2.5rem;
+  right: 1.25rem;
 
-  padding: 1rem;
-  min-width: 200px;
+  padding: 0.75rem 1rem;
   border-radius: 5px;
   
   &.success {

@@ -1,11 +1,13 @@
 <script>
 import AppHeader from "./cmps/AppHeader.vue"
 import AppFooter from "./cmps/AppFooter.vue"
+import UserMsg from "./cmps/UserMsg.vue";
 
 export default {
   components: {
     AppHeader,
     AppFooter,
+    UserMsg,
   },
 }
 </script>
@@ -19,6 +21,7 @@ export default {
       </transition>
     </router-view>
   </main>
+  <UserMsg />
   <AppFooter />
 </template>
 
